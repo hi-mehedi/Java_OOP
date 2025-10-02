@@ -19,6 +19,14 @@ public class ProductList {
         }
         System.out.println("Total Price:"+totalPrice);
     }
+
+    public void  calculate(List<ProductList> productLists){
+        int priceL = 0;
+        for (ProductList p : productLists){
+            priceL+=p.price;
+        }
+        System.out.println(priceL);
+    }
 }
 
 class Main{
@@ -36,5 +44,7 @@ class Main{
         int total1 = lists.stream().mapToInt(n->n.price).sum();
         System.out.println("Lambda Result:");
         System.out.println(total1);
+        System.out.println(">>>>>>>>>>");
+        new ProductList("d", 0).calculate(lists);
     }
 }
